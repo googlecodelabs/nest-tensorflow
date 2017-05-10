@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <h1 class="display-3">Nest TensorFlow Codelab</h1>
+    <p>Welcome to the Nest TensorFlow Codelab! This application will fetch an image from a <a href="https://nest.com/ca/camera/meet-nest-cam/">Nest Cam</a> and attempt to classify the contents using <a href="https://www.tensorflow.org/">TensorFlow</a>. To get started login to a Nest account already paired with a Nest Cam:</p>
+    <p>
+        <a class="btn btn-primary btn-lg" role="button" href="{{ url_for('login') }}">
+            <i class="fa fa-sign-in" aria-hidden="true"></i> Login
+        </a>
+    </p>
+</div>
+{% endblock %}

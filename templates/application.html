@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="card" id="results">
+    <img class="card-img-top img-fluid" src="{{ url_for('static', filename='images/placeholder.jpg') }}" alt="Nest Cam Snapshot" data-placeholder-url="{{ url_for('static', filename='images/placeholder.jpg') }}">
+    <div class="card-block">
+        <h4 class="card-title">Image Classification Results</h4>
+        <p class="card-text"><em>No image to classify yet</em></p>
+        <a href="#" class="btn btn-primary" id="fetch-image" data-api-url="{{ url_for('api') }}">
+            Fetch & Classify New Image
+            <i class="fa fa-spinner fa-pulse fa-fw" style="display: none;"></i>
+        </a>
+    </div>
+</div>
+{% endblock %}

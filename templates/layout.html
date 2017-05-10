@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <title>Nest Tensorflow Codelab</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/third_party/bootstrap.min.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/third_party/font-awesome.min.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/app.css') }}">
+    <script src="{{ url_for('static', filename='js/third_party/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-light bg-faded rounded navbar-toggleable-md">
+        <a class="navbar-brand" href="#">Nest Tensorflow Codelab</a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="https://developers.nest.com/" target="_blank">Nest Developer Console</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                {% if has_token %}
+                <a class="nav-link" href="{{url_for('logout')}}">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+                </a>
+                {% else %}
+                <a class="nav-link" href="{{url_for('login')}}">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i> Login
+                </a>
+                {% endif %}
+            </li>
+        </ul>
+    </nav>
+    {% block body %}{% endblock %}
+</div>
+</body>
+</html>
