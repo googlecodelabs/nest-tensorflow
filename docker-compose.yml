@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+    - "5000:5000"
+    volumes:
+    - .:/code
+    environment:
+    - CLIENT_ID=<Your OAuth client ID here>
+    - CLIENT_SECRET=<Your OAuth client secret here>

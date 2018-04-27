@@ -16,11 +16,16 @@
 import urllib
 import urllib2
 import json
+import os
 
 nest_auth_url =         'https://home.nest.com/login/oauth2'
 nest_access_token_url = 'https://api.home.nest.com/oauth2/access_token'
-product_id =            ''
-product_secret =        ''
+
+# Set your OAuth client ID and secret as environment variables. 
+# See docker-compose.yml for an example of where they can be set 
+# if not publishing that file.
+client_id     = os.environ.get("CLIENT_ID", None)
+client_secret = os.environ.get("CLIENT_SECRET", None)
 
 def get_access_token(authorization_code):
     """Paste get_access_token(authorization_code) snippet below this line"""
@@ -28,7 +33,7 @@ def get_access_token(authorization_code):
 
 def authorization_url():
     query = urllib.urlencode({
-        'client_id': product_id,
+        'client_id': client_id,
         'state':     'STATE'
     })
     return "{0}?{1}".format(nest_auth_url, query)
